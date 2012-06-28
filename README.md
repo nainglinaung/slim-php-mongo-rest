@@ -1,7 +1,9 @@
 Slim PHP Mongo REST server
 ==========================
 
-MongoDB REST server using Slim PHP
+MongoDB REST server using Slim PHP.
+
+I've just thrown this up quickly, there might be an error or two. But I am hoping to polish it a bit and add a few features to bring it more in line with the Node.js one I have used before. Probably a good starting point for people looking to do more advanced things, or just of interest anyone looking into Slim or Mongo with PHP. And if someone uses it and I get a pull request, all the better!
 
 Requirements
 ============
@@ -24,7 +26,7 @@ Fetch collection
 Get all in collection (respecting limit set in mongo-list.php)
     
 ```javascript
-$.get(
+$.getJSON(
   '/database/collection',
   function(data) {
     console.log(data);
@@ -35,20 +37,26 @@ $.get(
 Get blogs with phone in the title
 
 ```javascript
-$.get(
-  '/database/collection',
-  {
-    filter: {
-      type: 'blogs'
+$.ajax({
+    url: '/database/collection',
+    type: 'POST',
+    contentType: 'application/json',
+    dataType: 'json',
+    data: JSON.stringify({
+      filter: {
+        type: 'blogs'
+      },
+      wildcard: {
+        title: 'phone'
+      }
+    }),
+    success: function(data) {
+      console.log(data);
     },
-    wildcard: {
-      title: 'phone'
+    error: function (data) {
+      console.log(data);
     }
-  },
-  function(data){
-    console.log(data);
-  }
-);
+});
 ```
 
 And in Backbone
@@ -114,9 +122,9 @@ $.ajax({
 });
 ```
 
-What's coming next
-==================
+Todo
+====
 
 * Save/Update/Delete multiple
-* Fast update using save()
-* More configurable filter/regex options for listing
+* Alternate update using save()
+* Check it works... :-D
