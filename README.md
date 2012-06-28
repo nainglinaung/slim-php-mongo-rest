@@ -39,7 +39,7 @@ Get blogs with phone in the title
 ```javascript
 $.ajax({
     url: '/database/collection',
-    type: 'POST',
+    type: 'GET',
     contentType: 'application/json',
     dataType: 'json',
     data: JSON.stringify({
