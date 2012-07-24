@@ -13,6 +13,11 @@ http://php.net/manual/en/mongo.installation.php
 
 A web server such as nginx, lighttpd or Apache httpd
 
+Notes
+=====
+
+Update will only update fields present in the request, leaving any existing fields in tact. I will add the faster 'save' update (which is effectively a delete/insert for the same key) in future.
+
 Usage
 =====
 
