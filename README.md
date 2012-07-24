@@ -63,7 +63,11 @@ And in Backbone
 
 ```javascript
 var collection = Backbone.Collection.extend({
-  url: '/database/collection'
+  url: '/database/collection',
+  // drill down to the actual results
+  parse: function(response) {
+    return response.results;
+  }
 });
 
 collection.fetch({
