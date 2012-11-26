@@ -100,7 +100,7 @@ function mongoList($server, $db, $collection, $select = null) {
     foreach ($cursor as $result) { 
       // 'flattening' _id object in line with CRUD functions
       $result['_id'] = $result['_id']->{'$id'};
-      $output['results'] = $result;
+      $output['results'][] = $result;
     }
 
     $conn->close();
