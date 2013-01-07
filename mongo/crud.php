@@ -34,10 +34,10 @@ function mongoCreate($server, $db, $collection, $document) {
 }
 
 /**
- * Retrieve (findOne)
+ * Read (findOne)
  */
 
-function mongoRetrieve($server, $db, $collection, $id) {
+function mongoRead($server, $db, $collection, $id) {
   
   try {
   
