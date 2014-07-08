@@ -39,8 +39,9 @@ function _list($db, $collection){
     $collection,
     $select
   );
+  header("Content-Type: application/json");
   echo json_encode($data);
-
+  exit;
 }
 
 // Create
@@ -55,8 +56,9 @@ function _create($db, $collection){
     $collection, 
     $document
   ); 
+  header("Content-Type: application/json");
   echo json_encode($data);
-  
+  exit;
 }
 
 // Read
@@ -69,8 +71,9 @@ function _read($db, $collection, $id){
     $collection,
     $id
   );
+  header("Content-Type: application/json");
   echo json_encode($data);
-
+  exit;
 }
 
 // Update 
@@ -86,8 +89,9 @@ function _update($db, $collection, $id){
     $id,
     $document
   ); 
+  header("Content-Type: application/json");
   echo json_encode($data);
-  
+  exit;
 }
 
 // Delete
@@ -100,8 +104,9 @@ function _delete($db, $collection, $id){
     $collection, 
     $id
   ); 
+  header("Content-Type: application/json");
   echo json_encode($data);
-
+  exit;
 }
 
 $app->run();
