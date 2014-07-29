@@ -1,0 +1,12 @@
+{
+    "name": "hivelocity/slim-php-mongo-rest",
+    "require": {
+        "slim/slim": "2.*"
+    },
+    "authors": [
+        {
+            "name": "Naing Lin Aung",
+            "email": "nainglinaung@aceplussolutions.com"
+        }
+    ]
+}

@@ -1,13 +1,13 @@
 <?php
 
-require 'Slim/Slim/Slim.php';
+require 'vendor/autoload.php';
 require 'mongo/crud.php';
 require 'mongo/list.php';
 require 'mongo/command.php';
 
 define('MONGO_HOST', 'localhost');
 
-$app = new Slim();
+$app = new \Slim\Slim();
 
 /**
  * Routing
