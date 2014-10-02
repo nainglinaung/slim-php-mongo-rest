@@ -39,6 +39,9 @@ function _list($db, $collection){
     $collection,
     $select
   );
+
+ 
+
   header("Content-Type: application/json");
   echo json_encode($data);
   exit;

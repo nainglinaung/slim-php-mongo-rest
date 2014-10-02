@@ -113,7 +113,14 @@ function mongoList($server, $db, $collection, $select = null) {
     return $output;
     
   } catch (MongoConnectionException $e) {
-    die('Error connecting to MongoDB server');
+
+    $output = array(
+      'status'  => "501",
+       'error' => "Error connecting to MongoDB server"
+    );
+
+    return $output;
+   
   } catch (MongoException $e) {
     die('Error: ' . $e->getMessage());
   }
