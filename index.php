@@ -47,8 +47,9 @@ function _list($db, $collection){
     $select
   );
 
-  show($data);
  
+  show($data);
+
 }
 
 // Create
@@ -63,8 +64,7 @@ function _create($db, $collection){
     $collection, 
     $document
   ); 
- 
-  show($data);
+
 }
 
 // Read

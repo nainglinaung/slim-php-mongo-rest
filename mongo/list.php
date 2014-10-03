@@ -91,6 +91,18 @@ function mongoList($server, $db, $collection, $select = null) {
       'pages' => ceil($cursor->count() / $limit),
       'results' => array(),
     );
+
+    if(empty($output['results'])) {
+
+      unset($output);
+      
+       $output = array(
+       'status'  => "404",
+       'error' => "collection not found"
+      );
+
+       return $output;
+    }
     
     foreach ($cursor as $result) { 
       // 'flattening' _id object in line with CRUD functions
